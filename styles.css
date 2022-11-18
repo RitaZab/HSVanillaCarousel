@@ -1,3 +1,4 @@
+
 body{margin:0;
     padding:0}
 
@@ -11,17 +12,41 @@ footer{
 }
 
 .photo {
-    display: none;
+    display:none;
 }
-.carousel{
-    max-width: 60%;
-    max-height: 60%;
-    display:grid;
+
+
+.carousel {
+
+    display: grid;
+    
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 3;
+    border: black solid 2px;
 }
-.photo{
+.larrow{
+    grid-column-start:1;
+    align-self: center;
+    justify-self: end;
+    
+    border:solid black 1px}
+#arrow-left{max-width:30px;
+    align-self: center;}
+
+.images {
+            grid-column: 2/span 1;
+            border:solid black 2px
+        }
+.rarrow{grid-column-start:3;
+    border: solid black 2px;
+    align-self: center;
+}
+#arrow-right {
+    max-width: 30px;
+    align-self:center
+}
+
+#active {
+    display: block;
     max-width:100%;
-    max-hight:100%
-}
-#active{
-    display:block;
-}
+    grid-column:3/span 1}
