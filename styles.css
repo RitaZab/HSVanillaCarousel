@@ -1,0 +1,27 @@
+body{margin:0;
+    padding:0}
+
+h1{text-align: center;}
+
+    
+footer{
+    position:absolute;
+    bottom: 0px;
+    font-size:0.5rem
+}
+
+.photo {
+    display: none;
+}
+.carousel{
+    max-width: 60%;
+    max-height: 60%;
+    display:grid;
+}
+.photo{
+    max-width:100%;
+    max-hight:100%
+}
+#active{
+    display:block;
+}
