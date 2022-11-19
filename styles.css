@@ -2,7 +2,8 @@
 body{margin:0;
     padding:0}
 
-h1{text-align: center;}
+h1{text-align: center;
+}
 
     
 footer{
@@ -21,30 +22,33 @@ footer{
     display: grid;
     max-height:70vh;
     grid-template-columns: 1fr 70% 1fr;
-    grid-template-rows: 1fr 20px 40px;
-    border: black solid 2px;
+    grid-template-rows: 1fr 40px 50px;
+
 }
 .larrow{
     grid-column-start:1;
     align-self: center;
     justify-self: end;
     
-    border:solid black 1px}
-#arrow-left{max-width:30px;
-    align-self: center;}
+    }
+#arrow-left{max-width:50px;
+    align-self: center;
+    margin-right:0.5rem}
 
 .images {
             grid-column: 2/span 1;
-            border:solid black 2px;
+           
             justify-self:center
         }
 .rarrow{grid-column-start:3;
-    border: solid black 2px;
+    
     align-self: center;
 }
 #arrow-right {
-    max-width: 30px;
-    align-self:center
+    
+    max-width: 50px;
+    align-self:center;
+    margin-left:0.5rem;
 }
 
 .active {
@@ -54,21 +58,24 @@ footer{
     
     grid-column:3/span 1}
 .dots{grid-column:2/span 1;
-    border: solid black 2px;
+    
     justify-content: center;
-        display: flex;}
+    align-items: center;
+        display: flex;
+    margin-top:15px}
 .doticon{
-    width:15px;
-    height:15px;
-    margin: 5px 10px;
+    width:20px;
+    height:20px;
+    margin: 10px 10px;
 }
 .continent{grid-column-start:2;
     grid-row-start:3;
-    border: solid black 2px;
+    
     justify-self: center;
     margin:1px;
     padding:1px}
 .continentname{margin: 1px;
     padding: 1px;
     align-items: center;
+    font-size:40px
 }
