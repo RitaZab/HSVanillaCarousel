@@ -1,33 +1,47 @@
+//Creating global variables
 let arrowleft = document.querySelector("#arrow-left");
 let arrowright = document.querySelector("#arrow-right");
-let dot1 = document.querySelector("#dot1");
-let dot2 = document.querySelector("#dot2");
-let dot3 = document.querySelector("#dot3");
-let dot4 = document.querySelector("#dot4");
-let dot5 = document.querySelector("#dot5");
-let dot6 = document.querySelector("#dot6");
-let dot7 = document.querySelector("#dot7");
-let photo1 = document.querySelector("#photo1");
-let photo2 = document.querySelector("#photo2");
-let photo3 = document.querySelector("#photo3");
-let photo4 = document.querySelector("#photo4");
-let photo5 = document.querySelector("#photo5");
-let photo6 = document.querySelector("#photo6");
-let photo7 = document.querySelector("#photo7");
 let continentname = document.querySelector(".continentname");
-
+let activePhotoNr = 1
+//We need to remove class active from actual one to make it possible to other image to get it solely
 let removeActive = () => {
     let activephoto = document.querySelector(".active");
     activephoto.classList.remove("active");
 }
+//Adding class active to actually show photo on the page
 let showphoto = (photoNumber) => {
     removeActive();
     document.querySelector("#photo"+photoNumber).classList.add("active");
+}
+//Next to function are for arrow, they work by changing actual photo nr
+let nextSlide = () => {
+    if (activePhotoNr == 7) {//This line is for the last element on our picture list, prevent not to creating empty image element
+        activePhotoNr = 1
+    }
+    else {
+        activePhotoNr += 1;
+    }
+    showphoto(activePhotoNr);  
+}
+
+let prevoiusSlide = () => {
+    if (activePhotoNr == 1) {//and this is for first element, because now we are móving backward
+        activePhotoNr = 7
+    }
+    else {
+        activePhotoNr -= 1;
+    }
+    showphoto(activePhotoNr);
     
 }
 
-let showphoto2 = () => {
-   showphoto(2)
-       
-};
-dot2.addEventListener("click",showphoto2);
+for (let i = 1; i <= 7; i++){//This function is for using dots to give actual photo number and then give it then class actual
+    let showPhotoNr = () => {
+        activePhotoNr = i
+        showphoto(i)
+    }
+    document.querySelector("#dot"+i).addEventListener("click",showPhotoNr)
+}
+
+arrowleft.addEventListener("click",prevoiusSlide);
+arrowright.addEventListener("click",nextSlide)

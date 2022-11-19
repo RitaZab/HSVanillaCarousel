@@ -58,8 +58,8 @@ footer{
     justify-content: center;
         display: flex;}
 .doticon{
-    width:10px;
-    height:10px;
+    width:15px;
+    height:15px;
     margin: 5px 10px;
 }
 .continent{grid-column-start:2;
